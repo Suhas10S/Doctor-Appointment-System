@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "0d4b2d46-0a1b-407b-b269-a21c1c5ea17b",
+		"name": "Doctor-Appointment-System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16605795"
+	},
+	"item": [
+		{
+			"name": "API 1: Appointment Booking API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Kiran\",\n    \"lastName\": \"Kumar\",\n    \"email\": \"kiran.kumar@gmail.com\",\n    \"timeSlot\": \"10:00 AM - 11:00 AM\",\n    \"doctor\": \"Dr. Rashmi\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 2: View Appointment Details API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/appointment/kiran.kumar@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"appointment",
+						"kiran.kumar@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 3: View All Appointments by Doctor API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/appointments/Dr.%20Smith",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"appointments",
+						"Dr.%20Smith"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 4: Cancel an appointment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"kiran.kumar@gmail.com\",\n    \"timeSlot\": \"10:00 AM - 11:00 AM\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 5: Modify an appointment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"kiran.kumar@gmail.com\",\n    \"originalTimeSlot\": \"10:00 AM - 11:00 AM\",\n    \"newTimeSlot\": \"11:00 AM - 12:00 PM\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/modify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"modify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
